@@ -1,0 +1,69 @@
+
+/* basic setting */
+:root{
+    --main-color:  rgba(53,92,125,1);
+    --second-color: rgba(248,177,149,1);
+    --third--color: rgba(246,114,128,1);
+}
+
+
+
+html{
+    height: 100vh;
+    background-color: var(--main-color);
+}
+
+h1{
+    color: white;
+}
+
+
+
+
+/* top navigation bar  */
+.nav{
+    height: 5.5rem;
+    width: 100vw;
+    margin-bottom: 4rem;
+    background: var(--third--color);   
+}
+
+
+
+/* Main game panel */
+.container{
+    background-color: var(--main-color);
+    border-radius: 10px;
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 6rem 6rem 6rem;
+    margin: auto;
+    padding: 1rem;
+    row-gap: 10px;
+    width: fit-content;
+}
+
+.container-box{
+    width: 6rem;
+    height: 6rem;
+    border: 1px solid black;
+    border-color: var(--third--color);
+    border-radius: 10px;
+    background-color: var(--second-color);
+}
+
+
+/*  button */
+.btn{
+    width: 2rem;
+    height: 2rem;
+}
+
+
+
+
+
+
+
+
+
