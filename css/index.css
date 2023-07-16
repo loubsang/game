@@ -1,9 +1,11 @@
 
 /* basic setting */
 :root{
-    --main-color:  rgba(53,92,125,1);
-    --second-color: rgba(248,177,149,1);
-    --third--color: rgba(246,114,128,1);
+    --main-color:  #355c7d;
+    --second-color: #f8b195;
+    --third--color: #f67280;
+    --animation--time: 0.3s;
+    --link--color: #5c5c5c;
 }
 
 
@@ -13,20 +15,85 @@ html{
     background-color: var(--main-color);
 }
 
-h1{
-    color: white;
+
+li{
+    list-style: none;
+    display: inline-block;
 }
 
 
+
+
+/* link group */
+
+.link_group{
+    display: inline-flex;
+    padding-left: 1rem;
+    margin: 0;
+    align-items: center;
+}
 
 
 /* top navigation bar  */
 .nav{
-    height: 5.5rem;
-    width: 100vw;
+    height: 3rem;
+    padding: 1rem 1.5rem;
     margin-bottom: 4rem;
     background: var(--third--color);   
+    display: flex;
+    justify-content: space-between;
 }
+
+.nav-link_contain{
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+.icon_contain-icon{
+    width: 3rem;
+    height: 3rem;
+    transition: transform var(--animation--time);
+}
+
+.icon_contain-icon:hover{
+    transform: scale(1.2);
+}
+
+
+
+.link_group-link{
+    margin-right: 2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #5c5c5c; 
+    font-weight: bold;
+    transition: color var(--animation--time);
+}
+
+
+
+.link_group-link:visited{
+    color: var(--link--color);
+}
+
+.link_group-link:hover{
+    color: black;
+}
+
+
+
+.share_icon{
+    margin-right: 1rem;
+    transition: transform var(--animation--time);
+}
+
+.share_icon:hover{  
+    transform: rotate(30deg); 
+}
+
+
 
 
 
