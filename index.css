@@ -1,13 +1,43 @@
+
+/* define the basic setting */
+:root{
+
+}
+
+
+
+html{
+    background-color:  ;
+}
+
+
+
+
 .container{
+    background-color: aqua;
+    border-radius: 10px;
+    column-gap: 10px;
     display: grid;
-    grid-template-columns: 20px 20px 20px;
+    grid-template-columns: 6rem 6rem 6rem;
+    margin: auto;
+    padding: 1rem;
+    row-gap: 10px;
+    width: fit-content;
 }
 
 .box{
-    background-color: aqua;
-    width: 20px;
-    height: 20px;
+    width: 6rem;
+    height: 6rem;
+    border: 1px solid black;
+    border-color: aquamarine;
+    border-radius: 10px;
+    background-color: white;
 }
+
+
+
+
+
 
 
 
