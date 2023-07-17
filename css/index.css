@@ -115,17 +115,65 @@ li{
     height: 6rem;
     border: 1px solid black;
     border-color: var(--third--color);
+    background: linear-gradient(162deg, #96444d 0%, #f67280 60%);
     border-radius: 10px;
-    background-color: var(--second-color);
+    background-size: 200%;
+    background-position: 100% 50%; 
+    box-shadow: 10px 10px 30px  #bf5863;
+    transition: all 0.5s ease-in-out;
 }
+
+
+
+.container-box:hover{
+    box-shadow: 0px 0px 0px #bf5863;
+    animation-name: transaction;
+    animation-duration: 0.5s;
+    background-position: 0% 75%;
+    transform: scale(0.9);
+}
+
+
+
+@keyframes transaction{
+    0% {
+        background-position: 100% 50%;   
+    }
+
+
+    100% {
+        background-position: 0% 75%;   
+    }
+}
+
+
 
 
 /*  button */
-.btn{
-    width: 2rem;
-    height: 2rem;
+.btn_container{
+    width: fit-content;
+    height: fit-content;
+    margin: 2rem auto;
 }
 
+.btn_container-btn{
+    border-style: none;
+    background-color: var(--main-color);
+   
+}
+
+.btn-icon{
+    width: 5rem;
+    height: 5rem;
+    transition: all var(--animation--time) ease-in-out;
+    cursor: pointer;
+}
+
+
+
+.btn-icon:hover{
+    transform: scale(1.2) rotate(180deg);
+}
 
 
 
