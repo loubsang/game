@@ -96,6 +96,60 @@ li{
 }
 
 
+/* game tip */
+
+.tip{
+    background-color: #eed5a6;
+    margin: auto;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0.5rem 2rem;
+}
+
+.tip-icon_contain{
+    transition: all var(--animation--time);
+    /* display: inline-flex; */
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+}
+
+
+.icon_contain-tip_icon{  
+    width: 5rem;
+}
+
+
+
+.tip_icon{
+    transition: all var(--animation--time);
+    width: 5rem;
+    height: 5rem;
+   
+    background-size: cover;
+}
+
+#tip_cross{
+    background-image: url(../image/cross.svg);
+}
+
+#tip_tick{
+    background-image: url(../image/tick.svg);
+}
+
+
+.tip_icon_disappear{
+    height: 0rem;   
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -127,6 +181,8 @@ li{
     justify-content: center;
 }
 
+
+
 .box_clickable{
     background-size: 200%;
     background-position: 100% 50%; 
@@ -151,6 +207,11 @@ li{
     box-shadow: 0px 0px 0px #bf5863;
 }
 
+.win_tag{
+    background: white;
+    animation: winTagAnimation ease-out;
+    animation-duration: 1s;
+}
 
 .box-icon_hidden{
     width: 4rem;
@@ -177,6 +238,16 @@ li{
     }
 }
 
+
+@keyframes winTagAnimation{
+    50%{
+        transform: scale(1.3);
+    }
+
+    100%{
+        background-color: white;
+    }
+}
 
 
 

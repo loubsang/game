@@ -5,6 +5,7 @@ let gameArray = [
 ]
 let currentPlayer = 'cross'
 let isStart = true
+let isLock = false
 
 
 const clickable = document.querySelectorAll('.box_clickable');
@@ -12,11 +13,48 @@ const clickable = document.querySelectorAll('.box_clickable');
 clickable.forEach(
     (item) => item.addEventListener('click', function () {
         let isWin = checkIsWin(item)
-        if (isWin)
-            console.log(currentPlayer + ' is win')
-        changeStyle(item)
+        if(!isLock){
+            if (isWin && isClickable(item)) {  
+                isLock = true          
+                heighLightWinner()
+            }
+            if (isClickable(item)) {
+                tipIconChange()
+            }
+            changeStyle(item)
+        }
     })
 )
+
+
+function isClickable(item){
+
+    let itemClassList = item.classList
+    for(let i = 0; i < itemClassList.length; i++){
+        if(itemClassList[i].indexOf('clickable') > 0)
+            return true
+    }
+
+    return false
+}
+
+
+
+function checkIsWin(item) {
+    let rowAndColum = getRowAndColum(item)
+    setArray(rowAndColum)
+    return crosschecking() || checkColum(rowAndColum.colum) || checkRow(rowAndColum.row)
+}
+
+
+function heighLightWinner() {
+    for (let i = 0; i < 3; i++) {
+        for (let a = 0; a < 3; a++) {
+            if (gameArray[i][a] == currentPlayer)
+                document.getElementById('' + i + '-' + a).classList.add('win_tag')
+        }
+    }
+}
 
 
 function changeStyle(item) {
@@ -49,12 +87,6 @@ function setAttributeToAll(className, attribute, value) {
 }
 
 
-function checkIsWin(item) {
-    let rowAndColum = getRowAndColum(item)
-
-    setArray(rowAndColum)
-    return crosschecking() || checkColum(rowAndColum.colum) || checkRow(rowAndColum.row)
-}
 
 function getRowAndColum(item) {
     let id = item.getAttribute('id')
@@ -123,6 +155,11 @@ function crosschecking() {
 }
 
 
+
+function tipIconChange() {
+    let crossTip = document.getElementById('tip_cross')
+    crossTip.classList.toggle('tip_icon_disappear')
+}
 
 
 
