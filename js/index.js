@@ -8,14 +8,17 @@ let isStart = true
 let isLock = false
 
 
+
+
+
 const clickable = document.querySelectorAll('.box_clickable');
 
 clickable.forEach(
     (item) => item.addEventListener('click', function () {
         let isWin = checkIsWin(item)
-        if(!isLock){
-            if (isWin && isClickable(item)) {  
-                isLock = true          
+        if (!isLock) {
+            if (isWin && isClickable(item)) {
+                isLock = true
                 heighLightWinner()
             }
             if (isClickable(item)) {
@@ -27,11 +30,11 @@ clickable.forEach(
 )
 
 
-function isClickable(item){
+function isClickable(item) {
 
     let itemClassList = item.classList
-    for(let i = 0; i < itemClassList.length; i++){
-        if(itemClassList[i].indexOf('clickable') > 0)
+    for (let i = 0; i < itemClassList.length; i++) {
+        if (itemClassList[i].indexOf('clickable') > 0)
             return true
     }
 
